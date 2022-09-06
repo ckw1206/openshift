@@ -8,7 +8,7 @@
 Create the LDAP secret for use in the LDAP custom resource.
 
 ```
-oc create secret generic `ldap-secret` --from-literal=bindPassword=`pwd-of-bindDN` -n openshift-config
+oc create secret generic ldap-secret --from-literal=bindPassword=pwd-of-bindDN -n openshift-config
 ```
 Create a configmap for the LDAP server certificate.
 ```
