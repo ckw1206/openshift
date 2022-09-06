@@ -35,7 +35,7 @@ spec:
         - cn
         preferredUsername: 
         - sAMAccountName
-      bindDN: "" 
+      bindDN: "CN=svc_id,OU=Users,DC=domain,DC=com" 
       bindPassword: 
         name: ldap-secret
       ca: 
