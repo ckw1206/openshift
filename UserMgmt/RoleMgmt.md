@@ -1,21 +1,21 @@
-# Manage local role to project
+# Adding role to users or groups to project
  
-### Assign local role to User
+### Adding role to User
 ```
 oc adm policy add-role-to-user <role> <user> -n <project>
 ```
 
-### Remove local role to User
+### Removing role from User
 ```
 oc adm policy remove-role-from-user <role> <user> -n <project>
 ```
 
-### Assign local role to Group
+### Adding role to Group
 ```
 oc adm policy add-role-to-group <role> <group> -n <project>
 ```
 
-### Remove local role to Group
+### Removing role from Group
 ```
 oc adm policy remove-role-from-group <role> <group> -n <project>
 ```
@@ -24,22 +24,22 @@ oc adm policy remove-role-from-group <role> <group> -n <project>
 
 # Manage cluster-wide role
 
-### Assign cluster-wide role to User
+### Adding cluster-wide role to User
 ```
 oc adm policy add-cluster-role-to-user <role> <user>
 ```
 
-### Remove cluster-wide role to User
+### Removing cluster-wide role from User
 ```
 oc adm policy remove-cluster-role-from-user <role> <user>
 ```
 
-### Assign cluster-wide role to Group
+### Adding cluster-wide role to Group
 ```
 oc adm policy add-cluster-role-to-group <role> <group>
 ```
 
-### Remove cluster-wide role to Group
+### Removing cluster-wide role from Group
 ```
 oc adm policy remove-cluster-role-from-group <role> <group>
 ```
