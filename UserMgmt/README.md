@@ -1,4 +1,6 @@
-# Adding role to users or groups to project
+# Role management
+
+## Adding role to users or groups to project
  
 ### To add role to User
 ```
