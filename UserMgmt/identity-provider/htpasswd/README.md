@@ -1,3 +1,4 @@
+# User management
 ### Retrieve the HTPasswd file from the htpass-secret Secret object and save the file as users.htpasswd
 ```
 oc get secret htpass-secret -ojsonpath={.data.htpasswd} -n openshift-config | base64 --decode > users.htpasswd
