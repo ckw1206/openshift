@@ -12,12 +12,13 @@ sudo docker push <ACR-name>.azurecr.io/<repo-name>/<image-name>:tag
 
 ### To pull an image from ACR by Docker
 
-#### Use **Docker** env:
+- Use **Docker** env:
 ```
 sudo docker pull <ACR-name>.azurecr.io/<repo-name>/<image-name>:tag
 ```
 
-#### Use **OpenShift** env, you must create a docker-registry secret at first.
+- Use **OpenShift** env, you must create a docker-registry secret at first.
+
 Get ACR Access Key
 ```
 az acr credential show -n <ACR-name>
