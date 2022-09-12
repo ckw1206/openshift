@@ -1,1 +1,1 @@
-## Here is to record my self-study memos of OpenShift.
+## Here is to record my self-study notes of OpenShift.
