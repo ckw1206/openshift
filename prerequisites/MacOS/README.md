@@ -69,4 +69,4 @@ fips: false
 sshKey: ssh-ed25519 AAAA... 
 ```
 
-> the minimum vm size for master node is CPU:4 / RAM:16GB, and for worker node is CPU:2 / RAM:8GB. Both replicas can be stated as 1 if there is no availability requirement.
+> The minimum vm size for `master node is CPUs:4/RAM:16GB`, and for `worker node is CPUs:2/RAM:8GB`. Both `replicas can be set as 1` if there is no availability requirement.
