@@ -14,6 +14,7 @@ https://docs.docker.com/desktop/install/windows-install/
 ### Import image to Azure Container Registry
 
 - To import image to Azure Container Registry from a file.
+  
   Load an image from a file to Docker
   ```
   docker import <path>/<to>/<image>
