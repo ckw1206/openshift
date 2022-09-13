@@ -6,7 +6,9 @@ https://docs.docker.com/desktop/install/windows-install/
   
   PowerShell
   ```
-  Invoke-WebRequest -Uri https://aka.ms/installazurecliwindows -OutFile .\AzureCLI.msi; Start-Process msiexec.exe -Wait -ArgumentList '/I AzureCLI.msi /quiet'; rm .\AzureCLI.msi
+  Invoke-WebRequest -Uri https://aka.ms/installazurecliwindows \ 
+  -OutFile .\AzureCLI.msi; Start-Process msiexec.exe -Wait \ 
+  -ArgumentList '/I AzureCLI.msi /quiet'; rm .\AzureCLI.msi
   ```
 
 ### Import image to Azure Container Registry
@@ -22,16 +24,56 @@ https://docs.docker.com/desktop/install/windows-install/
   docker images
   ```
   
-  Rename Repo and tag if needed
+  Rename Repo and tag
   ```
-  docker image tag <IMAGE ID> REPOSITORY:TAG
+  docker image tag <IMAGE ID> <registry-name>.azurecr.io/<repo-name>/<image-name>:tag
   ```
   
-  Login to Azure with Azure Container Registry Contributor Permission
+  Log in to Azure Subscription with Container Role
   ```
   az login
   ```
   
-
-
+  Create a new Azure Container Registry
+  ```
+  az acr create --resource-group <ResourceGroup> \
+  --name <registry-name> --sku Basic/Standard/Premium
+  ```
+  
+  Get Registry Credential
+  ```
+  az acr credential show -n <registry-name>
+  
+  Sample output:
+  {
+  "passwords": [
+    {
+      "name": "password",
+      "value": <pwdvalue-1>
+    },
+    {
+      "name": "password2",
+      "value": <pwdvalue-2>
+    }
+  ],
+  "username": <registry-name>
+  }
+  ```
+  
+  Log in to Registry
+  ```
+  docker login <registry-name>.azurecr.io
+  Username: <registry-name>
+  Password: <pwdvalue>
+  ```
+  
+  Push image to Azure Container Registry
+  ```
+  sudo docker push <registry-name>.azurecr.io/<repo-name>/<image-name>:tag
+  ```
+  
+  List container images
+  ```
+  az acr repository list --name <registry-name> --output table
+  ```
   
