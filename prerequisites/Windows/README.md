@@ -11,19 +11,37 @@ https://docs.docker.com/desktop/install/windows-install/
   -ArgumentList '/I AzureCLI.msi /quiet'; rm .\AzureCLI.msi
   ```
 
-### Import image to Azure Container Registry
-
-- To import image to Azure Container Registry from a file.
-  
-  Load an image from a file to Docker
+### Export & Import images
+- To export/save an exist image to a file
+  - Use docker save
+  ```
+  docker save <IMAGE ID> > image.tar
+  ```
+  - Use docker export
+  ```
+  docker export <IMAGE ID> > image.tar
+  ```
+ 
+- To import/load an image from a file
+  - Use docker import
   ```
   docker import <path>/<to>/<image>
+  ```
+  - Use docker load
+  ```
+  docker load -i <path>/<to>/<image>
   ```
   
   Check Docker images
   ```
   docker images
   ```
+
+
+
+### Import image to Azure Container Registry
+
+- To import image to Azure Container Registry from a file.
   
   Rename Repo and tag
   ```
