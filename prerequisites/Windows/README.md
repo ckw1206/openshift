@@ -1,15 +1,12 @@
-### Download and install Docker desktop for Windows
-https://docs.docker.com/desktop/install/windows-install/
+### To run docker in Windows platform
+  - Download and install Docker desktop for Windows
+  
+    https://docs.docker.com/desktop/install/windows-install/
 
 ### To use Azure Container Registry
 - Download and install latest release of the Azure Cli
-  
-  PowerShell
-  ```
-  Invoke-WebRequest -Uri https://aka.ms/installazurecliwindows \ 
-  -OutFile .\AzureCLI.msi; Start-Process msiexec.exe -Wait \ 
-  -ArgumentList '/I AzureCLI.msi /quiet'; rm .\AzureCLI.msi
-  ```
+
+  https://aka.ms/installazurecliwindows
 
 ### Export & Import images
 - To export/save an exist image to a file
@@ -19,7 +16,7 @@ https://docs.docker.com/desktop/install/windows-install/
   ```
   - Use docker export
   ```
-  docker export <IMAGE ID> > image.tar
+  docker export <CONTAINER ID> > image.tar
   ```
  
 - To import/load an image from a file
@@ -57,6 +54,11 @@ https://docs.docker.com/desktop/install/windows-install/
   ```
   az acr create --resource-group <ResourceGroup> \
   --name <registry-name> --sku Basic/Standard/Premium
+  ```
+  
+  Enable admin
+  ```
+  az acr update -n <registry-name> --admin-enabled true
   ```
   
   Get Registry Credential
