@@ -29,7 +29,7 @@ controlPlane:
     azure:
       osDisk:
         diskSizeGB: 1024 
-        diskType: Premium_LRS
+        diskType: StandardSSD_LRS
       type: Standard_D8s_v3
   replicas: 3
 compute: 
@@ -40,7 +40,7 @@ compute:
       type: Standard_D2s_v3
       osDisk:
         diskSizeGB: 512 
-        diskType: Standard_LRS
+        diskType: StandardSSD_LRS
       zones: 
       - "1"
       - "2"
